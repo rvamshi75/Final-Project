@@ -1,0 +1,24 @@
+{% extends 'base2.html' %}
+
+{% block title %}
+<title>Editing Task</title>
+{% endblock title %}
+
+{% block content %}
+<br>
+<div class="container">
+  <form action="" method="post" class="row">
+    {% csrf_token %}
+
+    <label class="col-lg-1.5">Task Name: &nbsp&nbsp</label>
+    <input type="text" class="form-control col-lg-6" id="taskname" name="task"  value="{{task_obj.task}}">
+    <input type="hidden"  id="taskdone" name="done"  value="{{task_obj.done}}">
+
+&nbsp&nbsp
+
+  <button type="submit" class="btn btn-primary col-lg-2 ">Update Task</button>
+</form>
+<h1></h1>
+
+
+{% endblock content %}

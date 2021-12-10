@@ -1,0 +1,43 @@
+{% extends 'base2.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block title%}
+    <title>Register</title>
+    {% endblock title %}
+  </head>
+  <body>
+
+{% block content %}
+<div class="container">
+  <br>
+  {% if messages %}
+  {% for p in messages %}
+  <div class="alert alert-info alert-dismissible fade show col-lg-4" role="alert">
+    {{p}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+
+  </div>
+
+  {% endfor %}
+  {% endif %}
+
+
+<div class=" container" id='register'>
+<h2 class='text-primary'>Register</h2>
+<br>
+<form class="mt-2 col-4" action="" method="post">
+  {% csrf_token %}
+  {{register_form|crispy}}
+  <input type="submit" class='btn btn-primary mb-5' name="" value="Signup">
+
+</form>
+</div>
+
+    {% endblock content %}
+  </body>
+</html>
